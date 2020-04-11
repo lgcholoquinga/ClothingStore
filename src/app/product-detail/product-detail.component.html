@@ -1,0 +1,10 @@
+<div class="productDetail__image">
+    <img [src]="product.image" alt="product_detail_image">
+</div>
+<div class="productDetail__details">
+    <ul>
+        <li>Nombre: {{product.name}}</li>
+        <li>Precio: {{product.price | currency}}</li>
+    </ul>
+    <p>Descricpion:{{product.description}}</p>
+</div>

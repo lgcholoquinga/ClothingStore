@@ -1,0 +1,11 @@
+.swiper-slide img {
+   width: 100%;
+}
+.swiper-container {
+    width: 1400px;
+    height: 700px;
+}
+.swiper-button-prev, .swiper-button-next{
+    color: white;
+    font-weight: bold;
+}
