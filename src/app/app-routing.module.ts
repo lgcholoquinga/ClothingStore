@@ -1,9 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-import { ProductsComponent } from './products/products.component';
-import { ContactComponent } from './contact/contact.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AdminGuard } from './admin/admin.guard';
 
@@ -24,23 +20,23 @@ const routes: Routes = [
       },
       {
         path: 'products',
-        component: ProductsComponent
+        loadChildren: () => import('./product/product.module').then(p => p.ProductModule)
       },
       {
         path: 'contact',
-        component: ContactComponent,
+        loadChildren: () => import('./contact/contact.module').then(c => c.ContactModule),
         canActivate: [AdminGuard]
-      },
-      {
-        path: 'products/:id',
-        component: ProductDetailComponent
       }
     ]
   },
   {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(a => a.AdminModule)
+  },
+  {
     path: '**',
     pathMatch: 'full',
-    component: PageNotFoundComponent
+    loadChildren: () => import('./not-found/not-found.module').then(n => n.NotFoundModule)
   }
 ];
 

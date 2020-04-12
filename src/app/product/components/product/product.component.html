@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{product.title | uppercase}}</mat-card-title>
+        <mat-card-subtitle>{{product.price | currency}}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="crop__image">
+        <img class="product__image" [src]="product.image" alt="product">
+    </div>
+    <mat-card-content>
+        <p>{{product.description}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="accent" (click)="addToCart()">
+            <mat-icon>add_shopping_cart</mat-icon>
+            Add To Cart
+        </button> 
+        <a mat-raised-button color="primary" [routerLink]="['/products', product.id]">
+            <mat-icon>description</mat-icon>
+            See Details
+        </a>       
+    </mat-card-actions>
+</mat-card>

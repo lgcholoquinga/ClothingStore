@@ -1,7 +1,17 @@
-<header>
-    <nav>
-        <a routerLink="/home" routerLinkActive="active">Home</a>
-        <a routerLink="/contact" routerLinkActive="active">Contact</a>
-        <a routerLink="/products" routerLinkActive="active">Products</a>
-    </nav>
-</header>
+<mat-toolbar class="header__container">
+    <mat-toolbar-row>
+        <div class="container">
+            <div class="row between-xs middle-xs header-row">
+                <nav>
+                    <a class="header__menu" mat-button routerLink="/home" routerLinkActive="active">Home</a>
+                    <a class="header__menu" mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
+                    <a class="header__menu" mat-button routerLink="/products" routerLinkActive="active">Products</a>
+                </nav>
+                <a mat-raised-button routerLink="" matBadge="4" matBadgeColor="warn">
+                    <mat-icon>shopping_cart</mat-icon>
+                    Cart
+                </a>
+            </div>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

@@ -3,5 +3,23 @@ nav > a {
     padding: 5px;
 }
 nav > a.active {
-    background-color: tomato;
+    background-color: #686de0;
+}
+.header__container {
+    width: 100%;
+    background-color: #30336b;
+}
+.header-row {
+    width: 100%;
+}
+.header__menu {
+    color: white;
+}
+
+@media (max-width:768px){
+    .container {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }

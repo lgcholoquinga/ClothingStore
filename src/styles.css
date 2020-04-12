@@ -2,12 +2,29 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
 }
-.product-grid {
-    width: 100%;
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #dfe4ea; }
+
+/* .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 10px;
-    justify-self: center;
+    gap: 50px 20px;
 }
+.container {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: turquoise;
+}
+/* @media screen and(max-width: 768px){
+    .product-grid {
+        width: auto;
+        padding-right: auto;
+        padding-left: auto;
+        background-color: tomato;
+    }
+} */ 
+

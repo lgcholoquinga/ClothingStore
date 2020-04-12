@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from 'src/app/interface/product.model';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -7,49 +8,12 @@ import { Product } from 'src/app/interface/product.model';
 })
 export class ProductsService {
 
-  products: Product[] = [
-    {
-      id: '1',
-      image: 'assets/images/camiseta.png',
-      title: 'Camiseta',
-      price: 30,
-      description: 'Camiseta de Marca'
-    },
-    {
-      id: '2',
-      image: 'assets/images/camiseta.png',
-      title: 'Camiseta',
-      price: 40,
-      description: 'Camiseta de Marca'
-    },
-    {
-      id: '3',
-      image: 'assets/images/camiseta.png',
-      title: 'Camiseta',
-      price: 50,
-      description: 'Camiseta de Marca'
-    },
-    {
-      id: '4',
-      image: 'assets/images/camiseta.png',
-      title: 'Camiseta',
-      price: 30,
-      description: 'Camiseta Blanca'
-    },
-    {
-      id: '5',
-      image: 'assets/images/camiseta.png',
-      title: 'Camiseta',
-      price: 50,
-      description: 'Camiseta de Tela'
-    }
-  ];
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getAllProducts() {
-    return this.products;
+    return this.http.get<Product[]>('https://platzi-store.herokuapp.com/products/');
   }
   getProductById(id: string) {
-    return this.products.find(item => id === item.id);
+    return this.http.get(`https://platzi-store.herokuapp.com/products/${id}`);
   }
 }
